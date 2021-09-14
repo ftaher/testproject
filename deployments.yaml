@@ -1,0 +1,43 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: apple-website-clone-2021
+  name: apple-website-clone-2021
+  namespace: apple-website
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      deployment: apple-website-clone-2021
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        deployment: apple-website-clone-2021
+    spec:
+      containers:
+      - image: image-registry.openshift-image-registry.svc:5000/apple-website/apple-website-clone-2021@sha256:fef37547bf077aff6f96d91e2303e0065120e2c95099a9e4add09b3c47265142
+        imagePullPolicy: IfNotPresent
+        name: apple-website-clone-2021
+        ports:
+        - containerPort: 8080
+          protocol: TCP
+        - containerPort: 8443
+          protocol: TCP
+        resources: {}
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30

@@ -1,0 +1,50 @@
+---
+apiVersion: image.openshift.io/v1
+items:
+- apiVersion: image.openshift.io/v1
+  kind: ImageStream
+  metadata:
+    annotations:
+      openshift.io/generated-by: OpenShiftNewApp
+    creationTimestamp: "2021-09-14T11:11:07Z"
+    generation: 1
+    labels:
+      app: apple-website-clone-2021
+      app.kubernetes.io/component: apple-website-clone-2021
+      app.kubernetes.io/instance: apple-website-clone-2021
+    managedFields:
+    - apiVersion: image.openshift.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:openshift.io/generated-by: {}
+          f:labels:
+            .: {}
+            f:app: {}
+            f:app.kubernetes.io/component: {}
+            f:app.kubernetes.io/instance: {}
+      manager: oc
+      operation: Update
+      time: "2021-09-14T11:11:07Z"
+    name: apple-website-clone-2021
+    namespace: apple-website
+    resourceVersion: "82096"
+    uid: 2487c91d-c2df-486b-b045-8ad4a670720f
+  spec:
+    lookupPolicy:
+      local: false
+  status:
+    dockerImageRepository: image-registry.openshift-image-registry.svc:5000/apple-website/apple-website-clone-2021
+    publicDockerImageRepository: default-route-openshift-image-registry.apps-crc.testing/apple-website/apple-website-clone-2021
+    tags:
+    - items:
+      - created: "2021-09-14T11:11:49Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/apple-website/apple-website-clone-2021@sha256:fef37547bf077aff6f96d91e2303e0065120e2c95099a9e4add09b3c47265142
+        generation: 1
+        image: sha256:fef37547bf077aff6f96d91e2303e0065120e2c95099a9e4add09b3c47265142
+      tag: latest
+kind: ImageStreamList
+metadata:
+  resourceVersion: "82916"

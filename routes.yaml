@@ -1,0 +1,17 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  labels:
+    app: apple-website-clone-2021
+    app.kubernetes.io/component: apple-website-clone-2021
+    app.kubernetes.io/instance: apple-website-clone-2021
+  name: apple-website-clone-2021
+spec:
+  host: apple-website-clone-2021.apps-crc.testing
+  port:
+    targetPort: 8080-tcp
+  to:
+    kind: Service
+    name: apple-website-clone-2021
+    weight: 100
+  wildcardPolicy: None
